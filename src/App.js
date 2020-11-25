@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-	const OurTeam = ['MUKHLIS', 'IAN', 'ELAN', 'IKHWAN', 'LINA', 'ANDY', 'MARCO', 'DINA'] 
+	const OurTeam = ['MUKHLIS', 'IAN', 'ELAN', 'IKHWAN', 'LINA', 'ANDY', 'MARCO', 'DINA', 'MARCUS', 'HERI', 'YUNA', 'REZA'] 
 	return (
 		<div className="App">
 			<header className="App-header">
