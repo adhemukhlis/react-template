@@ -30,23 +30,23 @@ export function register(config) {
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
-    window.addEventListener('activate', function(event) {
-      event.waitUntil(
-          caches.keys().then(function(cacheNames) {
-              return Promise.all(
-                  cacheNames.filter(function(cacheName) {
-                      // Return true if you want to remove this cache,
-                      // but remember that caches are shared across
-                      // the whole origin
-                      return true
-                  }).map(function(cacheName) {
-                      console.log(cacheName)
-                      return caches.delete(cacheName);
-                  })
-              );
-          })
-      );
-    });
+    // window.addEventListener('activate', function(event) {
+    //   event.waitUntil(
+    //       caches.keys().then(function(cacheNames) {
+    //           return Promise.all(
+    //               cacheNames.filter(function(cacheName) {
+    //                   // Return true if you want to remove this cache,
+    //                   // but remember that caches are shared across
+    //                   // the whole origin
+    //                   return true
+    //               }).map(function(cacheName) {
+    //                   console.log(cacheName)
+    //                   return caches.delete(cacheName);
+    //               })
+    //           );
+    //       })
+    //   );
+    // });
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
