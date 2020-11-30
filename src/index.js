@@ -3,10 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-ReactDOM.render(
-	<App/>, document.getElementById('root'));
+ReactDOM.render((<App/>), document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function to
 // log results (for example: reportWebVitals(console.log)) or send to an
 // analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-serviceWorker.register();
+serviceWorker.register({
+	onUpdate: registration => {
+		alert('New version available!  Ready to update?');
+		window
+			.location
+			.reload();
+		if (registration && registration.waiting) {
+			registration
+				.waiting
+				.postMessage({type: 'SKIP_WAITING'});
+			registration
+				.waiting
+				.addEventListener('statechange', e => {
+					if (e.target.state === 'activated') {
+						window
+							.location
+							.reload()
+					}
+				})
+		}
+	}
+});

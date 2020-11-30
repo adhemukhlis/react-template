@@ -10,6 +10,8 @@
     "antd": "^4.8.5",
     "axios": "^0.21.0",
     "babel-plugin-import": "^1.13.3",
+    "events": "^3.2.0",
+    "list-react-files": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -20,6 +22,7 @@
   "scripts": {
     "start": "rescripts start",
     "build": "rescripts build",
+    "build_native": "react-scripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject"
   },
